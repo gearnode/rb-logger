@@ -68,8 +68,8 @@ module RbLogger
     def new_child(domain, data = {})
       domain = "#{@domain}.#{domain}"
       data = @data.merge(data)
-      self.class.new(domain: domain, formatter: @formatter,
-                     data: data, device: device)
+      self.class.new(domain, formatter: @formatter,
+                     data: data, device: @device)
     end
 
     # Transform RbLogger::Logger into the standard Ruby logger.
